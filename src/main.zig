@@ -636,6 +636,7 @@ pub fn main() !void {
                 update = true;
             },
             termbox.TB_KEY_ENTER => {
+                if (config.enter_is_login or active_input == .password) {
                 try info_line.addMessage(lang.authenticating, config.bg, config.fg);
                 InfoLine.clearRendered(allocator, buffer) catch {
                     try info_line.addMessage(lang.err_alloc, config.error_bg, config.error_fg);
@@ -711,6 +712,16 @@ pub fn main() !void {
                 // Restore the cursor
                 _ = termbox.tb_set_cursor(0, 0);
                 _ = termbox.tb_present();
+                } else {
+                    // Exact same thing as tab
+                    active_input = switch (active_input) {
+                        .info_line => .session,
+                        .session => .login,
+                        .login => .password,
+                        .password => .info_line,
+                    };
+                    update = true;
+                }
             },
             else => {
                 if (!insert_mode) {
