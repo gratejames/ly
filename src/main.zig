@@ -325,9 +325,9 @@ pub fn main() !void {
     const sleep_key = try std.fmt.parseInt(u8, config.sleep_key[1..], 10);
     const sleep_len = try utils.strWidth(lang.sleep);
     const brightness_down_key = try std.fmt.parseInt(u8, config.brightness_down_key[1..], 10);
-    const brightness_down_len = try utils.strWidth(lang.brightness_down);
+    // const brightness_down_len = try utils.strWidth(lang.brightness_down);
     const brightness_up_key = try std.fmt.parseInt(u8, config.brightness_up_key[1..], 10);
-    const brightness_up_len = try utils.strWidth(lang.brightness_up);
+    // const brightness_up_len = try utils.strWidth(lang.brightness_up);
 
     var event: termbox.tb_event = undefined;
     var run = true;
@@ -469,19 +469,19 @@ pub fn main() !void {
                         length += sleep_len + 1;
                     }
 
-                    buffer.drawLabel(config.brightness_down_key, length, 0);
-                    length += config.brightness_down_key.len + 1;
-                    buffer.drawLabel(" ", length - 1, 0);
+                    // buffer.drawLabel(config.brightness_down_key, length, 0);
+                    // length += config.brightness_down_key.len + 1;
+                    // buffer.drawLabel(" ", length - 1, 0);
 
-                    buffer.drawLabel(lang.brightness_down, length, 0);
-                    length += brightness_down_len + 1;
+                    // buffer.drawLabel(lang.brightness_down, length, 0);
+                    // length += brightness_down_len + 1;
 
-                    buffer.drawLabel(config.brightness_up_key, length, 0);
-                    length += config.brightness_up_key.len + 1;
-                    buffer.drawLabel(" ", length - 1, 0);
+                    // buffer.drawLabel(config.brightness_up_key, length, 0);
+                    // length += config.brightness_up_key.len + 1;
+                    // buffer.drawLabel(" ", length - 1, 0);
 
-                    buffer.drawLabel(lang.brightness_up, length, 0);
-                    length += brightness_up_len + 1;
+                    // buffer.drawLabel(lang.brightness_up, length, 0);
+                    // length += brightness_up_len + 1;
                 }
 
                 if (config.box_title) |title| {
