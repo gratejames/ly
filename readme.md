@@ -4,6 +4,9 @@
 
 Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
 
+## My edits
+Super simple: Add the edits made in [pr 545](https://github.com/fairyglade/ly/pull/545) (ported to current zig code) so that I can press enter after typing the username to advance to password.
+
 ## Dependencies
 - Compile-time:
   - zig >=0.12.0
