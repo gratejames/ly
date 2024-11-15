@@ -28,7 +28,7 @@ Super simple: Add the edits made in [pr 545](https://github.com/fairyglade/ly/pu
 It is recommended to add a rule for Ly as it currently does not ship one.
 
 ```
-# dnf install kernel-devel pam-devel libxcb-devel
+# dnf install kernel-devel pam-devel libxcb-devel zig
 ```
 
 ## Support
@@ -43,6 +43,7 @@ The following desktop environments were tested with success:
  - dwm
  - enlightenment
  - gnome
+ - hyprland
  - i3
  - kde
  - labwc
